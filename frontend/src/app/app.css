@@ -1,0 +1,11 @@
+/* Estilos globales para la app, si se requieren específicos para app-root */
+
+.main-app-bg {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0;
+  background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+}

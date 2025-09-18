@@ -1,0 +1,46 @@
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+	font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+
+.main-app-bg {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	padding: 0;
+	background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+}
+
+h1, h2, h3 {
+	font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+	font-weight: 700;
+	letter-spacing: -1px;
+}
+
+/* Botones de selección de colorimetría */
+app-colorimetry-selector a div {
+	box-shadow: 0 2px 12px #0001;
+	border-radius: 1.2rem;
+	transition: transform 0.18s, box-shadow 0.18s;
+	border: 1.5px solid #e0e7ff;
+}
+app-colorimetry-selector a div:hover {
+	transform: scale(1.06) rotate(-2deg);
+	box-shadow: 0 6px 24px #b6b6e6cc;
+	border-color: #a5b4fc;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+	.main-app-bg {
+		padding: 0.5rem;
+	}
+	app-colorimetry-selector div[style*="flex-direction: column"] {
+		gap: 1.2rem !important;
+	}
+}
