@@ -1,55 +1,4 @@
-.colorimetry-hero-bg {
-  min-height: 100vh;
-  width: 100vw;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background: linear-gradient(120deg, #f8fafc 0%, #e0e7ff 60%, #f9e6ff 100%);
-}
-.colorimetry-hero-overlay {
-  display: none;
-}
-.colorimetry-svg-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 1;
-  pointer-events: none;
-}
-.colorimetry-hero-content {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.colorimetry-title {
-  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
-  font-size: 3.2rem;
-  font-weight: 900;
-  color: #181c32;
-  text-align: center;
-  letter-spacing: -1.5px;
-  line-height: 1.1;
-  margin-top: 0;
-  margin-bottom: 0;
-  text-shadow: 0 4px 32px #fff8, 0 1.5px 0 #fff inset;
-}
-.colorimetry-title span {
-  color: #a259e6;
-  background: linear-gradient(90deg, #a259e6 20%, #f6e7a6 80%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-/* Estilos globales para la app, si se requieren específicos para app-root */
-
-
+/* App component styles - Minimal and clean */
 .main-app-bg {
   min-height: 100vh;
   display: flex;
@@ -57,87 +6,44 @@
   align-items: center;
   justify-content: flex-start;
   padding: 0;
-  background: linear-gradient(120deg, #f8fafc 0%, #e0e7ff 60%, #f9e6ff 100%);
-  animation: bg-move 12s ease-in-out infinite alternate;
+  background: linear-gradient(135deg, #FAFAFA 0%, #F0F4F8 50%, #E8F2FF 100%);
+  background-attachment: fixed;
+  animation: subtleGradient 8s ease-in-out infinite alternate;
 }
 
-@keyframes bg-move {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 100% 50%; }
-}
-
-h1 {
-  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
-  font-size: 2.5rem;
-  font-weight: 800;
-  margin-top: 2.5rem;
-  margin-bottom: 1.5rem;
-  letter-spacing: -1px;
-  color: #181c32;
-  text-shadow: 0 2px 12px #e0e7ff;
-  text-align: center;
-}
-
-app-colorimetry-selector > div > div {
-  gap: 2.5rem !important;
-}
-
-app-colorimetry-selector a div {
-  min-width: 200px;
-  min-height: 100px;
-  font-size: 1.35rem;
-  font-weight: 600;
-  border-radius: 1.5rem;
-  box-shadow: 0 4px 24px #b6b6e6cc, 0 1.5px 0 #fff inset;
-  border: none;
-  background: linear-gradient(135deg, #b5d8eb 60%, #e6b6c2 100%);
-  color: #2d3a4a;
-  transition: transform 0.18s, box-shadow 0.18s, background 0.3s;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-app-colorimetry-selector a:nth-child(2) div {
-  background: linear-gradient(135deg, #e2c275 60%, #bfa6a0 100%);
-  color: #4a2d1a;
-}
-app-colorimetry-selector a:nth-child(3) div {
-  background: linear-gradient(135deg, #f6e7a6 60%, #b7d6c2 100%);
-  color: #4a4a2d;
-}
-app-colorimetry-selector a:nth-child(4) div {
-  background: linear-gradient(135deg, #7bafd4 60%, #a68ad6 100%);
-  color: #2d2d4a;
-}
-app-colorimetry-selector a div::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 1.5rem;
-  background: rgba(255,255,255,0.12);
-  opacity: 0;
-  transition: opacity 0.2s;
-}
-app-colorimetry-selector a div:hover {
-  transform: scale(1.08) rotate(-2deg);
-  box-shadow: 0 8px 32px #b6b6e6cc, 0 1.5px 0 #fff inset;
-  z-index: 2;
-}
-app-colorimetry-selector a div:hover::after {
-  opacity: 1;
-}
-
-@media (max-width: 900px) {
-  app-colorimetry-selector > div > div {
-    flex-direction: column !important;
-    gap: 1.2rem !important;
+@keyframes subtleGradient {
+  0% { 
+    background: linear-gradient(135deg, #FAFAFA 0%, #F0F4F8 50%, #E8F2FF 100%);
   }
-  app-colorimetry-selector a div {
-    min-width: 160px;
-    min-height: 80px;
-    font-size: 1.1rem;
+  100% { 
+    background: linear-gradient(135deg, #F8FAFC 0%, #EDF2F7 50%, #E6FFFA 100%);
+  }
+}
+
+/* Responsive optimizations */
+@media (max-width: 1024px) {
+  .main-app-bg {
+    background-attachment: scroll;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-app-bg {
+    padding: 0.5rem;
+    animation: none;
+    background: linear-gradient(135deg, #FAFAFA 0%, #F0F4F8 100%);
+  }
+}
+
+@media (max-width: 480px) {
+  .main-app-bg {
+    padding: 0.25rem;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .main-app-bg {
+    animation: none;
   }
 }

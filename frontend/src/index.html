@@ -1,11 +1,54 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="utf-8">
-  <title>Frontend</title>
+  <title>Colorimetría Viva - Descubrí tu paleta personal</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Descubre tu estación colorimétrica personal y encuentra los colores que mejor te favorecen según tu imagen personal.">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- CSS Variables for color palette -->
+  <style>
+    :root {
+      --spring-light: #FFE8F0;
+      --spring-medium: #FFD6E0;
+      --spring-accent: #FF9EC7;
+      
+      --summer-light: #E8F5FF;
+      --summer-medium: #D6EAF8;
+      --summer-accent: #7BAFD4;
+      
+      --autumn-light: #FFF4E8;
+      --autumn-medium: #FFE7C7;
+      --autumn-accent: #E2C275;
+      
+      --winter-light: #F0E8FF;
+      --winter-medium: #E0D6FF;
+      --winter-accent: #A68AD6;
+      
+      --neutral-50: #FAFAFA;
+      --neutral-100: #F5F5F5;
+      --neutral-200: #EEEEEE;
+      --neutral-300: #E0E0E0;
+      --neutral-400: #BDBDBD;
+      --neutral-500: #9E9E9E;
+      --neutral-600: #757575;
+      --neutral-700: #616161;
+      --neutral-800: #424242;
+      --neutral-900: #212121;
+      
+      --gradient-spring: linear-gradient(135deg, var(--spring-light) 0%, var(--spring-medium) 50%, var(--spring-accent) 100%);
+      --gradient-summer: linear-gradient(135deg, var(--summer-light) 0%, var(--summer-medium) 50%, var(--summer-accent) 100%);
+      --gradient-autumn: linear-gradient(135deg, var(--autumn-light) 0%, var(--autumn-medium) 50%, var(--autumn-accent) 100%);
+      --gradient-winter: linear-gradient(135deg, var(--winter-light) 0%, var(--winter-medium) 50%, var(--winter-accent) 100%);
+    }
+  </style>
 </head>
 <body>
   <app-root></app-root>

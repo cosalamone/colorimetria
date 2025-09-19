@@ -1,0 +1,31 @@
+/* Spring page specific styles */
+.color-palettes-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 3rem auto 0 auto;
+  padding: 0 1rem;
+}
+
+.palettes-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .color-palettes-section {
+    padding: 0 1rem;
+    margin-top: 2rem;
+  }
+  
+  .palettes-container {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .color-palettes-section {
+    padding: 0 0.75rem;
+  }
+}

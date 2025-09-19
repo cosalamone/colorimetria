@@ -1,9 +1,168 @@
-<div class="station-page">
-  <button class="volver-btn" (click)="volver()">← Volver</button>
-  <h2 class="station-title">{{ nombreEstacion }}</h2>
-  <div class="subestaciones-cards">
-    @for (sub of subestaciones; track sub.nombre) {
-      <app-cardbase [data]="sub"></app-cardbase>
-    }
-  </div>
+<div class="station-container">
+  <!-- Header de la estación -->
+  <header class="station-header">
+    <button class="back-button" (click)="volver()" aria-label="Volver al inicio">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19 12H5M12 19L5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>Volver</span>
+    </button>
+    
+    <div class="station-title-section">
+      <div class="station-icon">
+        @switch (nombreEstacion.toLowerCase()) {
+          @case ('primavera') { 🌸 }
+          @case ('verano') { ☀️ }
+          @case ('otoño') { 🍂 }
+          @case ('invierno') { ❄️ }
+          @default { 🎨 }
+        }
+      </div>
+      <h1 class="station-title">{{ nombreEstacion }}</h1>
+      <p class="station-description">
+        @switch (nombreEstacion.toLowerCase()) {
+          @case ('primavera') { 
+            Los colores de la primavera son frescos, delicados y luminosos. 
+            Perfectos para personas con un subtono cálido y apariencia juvenil. 
+          }
+          @case ('verano') { 
+            La paleta de verano incluye tonos suaves, frescos y apagados. 
+            Ideal para quienes tienen un subtono frío y características suaves. 
+          }
+          @case ('otoño') { 
+            Los colores de otoño son ricos, cálidos y profundos. 
+            Perfectos para personas con subtono cálido y características intensas. 
+          }
+          @case ('invierno') { 
+            La paleta invernal presenta colores intensos, contrastados y vibrantes. 
+            Ideal para quienes tienen subtono frío y características marcadas. 
+          }
+          @default { Explorá los subtipos de esta estación colorimétrica. }
+        }
+      </p>
+    </div>
+  </header>
+
+  <!-- Características de la estación -->
+  <section class="station-characteristics">
+    <h2>Características de {{ nombreEstacion }}</h2>
+    <div class="characteristics-grid">
+      <div class="characteristic">
+        <div class="characteristic-icon">👁️</div>
+        <h4>Ojos</h4>
+        <p>
+          @switch (nombreEstacion.toLowerCase()) {
+            @case ('primavera') { Claros: azules, verdes, avellana dorados }
+            @case ('verano') { Suaves: azules, grises, avellana fríos }
+            @case ('otoño') { Cálidos: marrones, avellana, verdes dorados }
+            @case ('invierno') { Intensos: negros, marrones oscuros, azules profundos }
+          }
+        </p>
+      </div>
+      <div class="characteristic">
+        <div class="characteristic-icon">🎨</div>
+        <h4>Cabello</h4>
+        <p>
+          @switch (nombreEstacion.toLowerCase()) {
+            @case ('primavera') { Rubios dorados, castaños claros con reflejos cálidos }
+            @case ('verano') { Rubios cenizos, castaños con reflejos fríos }
+            @case ('otoño') { Rojizos, castaños con reflejos cobrizos }
+            @case ('invierno') { Negros, castaños muy oscuros, blancos }
+          }
+        </p>
+      </div>
+      <div class="characteristic">
+        <div class="characteristic-icon">✨</div>
+        <h4>Piel</h4>
+        <p>
+          @switch (nombreEstacion.toLowerCase()) {
+            @case ('primavera') { Subtono cálido, dorada, marfil con tintes melocotón }
+            @case ('verano') { Subtono frío, rosada, con venitas azules visibles }
+            @case ('otoño') { Subtono cálido, dorada, con frecas o tendencia al bronceado }
+            @case ('invierno') { Subtono frío, porcelana o muy morena, contrastada }
+          }
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Subtipos de la estación -->
+  <section class="subtypes-section">
+    <h2>Subtipos de {{ nombreEstacion }}</h2>
+    <p class="subtypes-description">
+      Cada estación se divide en subtipos que refinan aún más tu paleta personal. 
+      Explorá cada uno para encontrar el que mejor se adapte a tus características.
+    </p>
+    
+    <div class="subtypes-grid">
+      @for (sub of subestaciones; track sub.nombre) {
+        <div class="subtype-card">
+          <app-cardbase [data]="sub"></app-cardbase>
+          <div class="subtype-info">
+            <h4>{{ sub.nombre }}</h4>
+            <p>
+              @switch (sub.nombre.toLowerCase()) {
+                @case ('primavera clara') { Colores suaves y luminosos con alta claridad }
+                @case ('primavera cálida') { Tonos vibrantes con temperatura cálida }
+                @case ('primavera brillante') { Colores intensos y saturados }
+                @case ('verano suave') { Tonos apagados y delicados }
+                @case ('verano verdadero') { Colores frescos y equilibrados }
+                @case ('verano claro') { Tonos pálidos y etéreos }
+                @case ('otoño suave') { Colores cálidos pero discretos }
+                @case ('otoño profundo') { Tonos ricos y saturados }
+                @case ('otoño cálido') { Colores vibrantes y dorados }
+                @case ('invierno profundo') { Tonos intensos y dramáticos }
+                @case ('invierno frío') { Colores puros y helados }
+                @case ('invierno brillante') { Tonos vibrantes y contrastados }
+                @default { Subtipo único de esta estación }
+              }
+            </p>
+          </div>
+        </div>
+      }
+    </div>
+  </section>
+
+  <!-- Consejos de estilismo -->
+  <section class="styling-tips">
+    <h2>Consejos de Estilismo</h2>
+    <div class="tips-grid">
+      <div class="tip">
+        <div class="tip-icon">👗</div>
+        <h4>Ropa</h4>
+        <p>
+          @switch (nombreEstacion.toLowerCase()) {
+            @case ('primavera') { Opta por colores claros y luminosos cerca del rostro }
+            @case ('verano') { Elige tonos suaves y evita colores muy saturados }
+            @case ('otoño') { Prefiere colores ricos y texturas que aporten calidez }
+            @case ('invierno') { Usa colores intensos y contrastes marcados }
+          }
+        </p>
+      </div>
+      <div class="tip">
+        <div class="tip-icon">💄</div>
+        <h4>Maquillaje</h4>
+        <p>
+          @switch (nombreEstacion.toLowerCase()) {
+            @case ('primavera') { Tonos coral, melocotón y dorados para un look natural }
+            @case ('verano') { Rosas suaves, malvas y tonos fríos que realcen tu delicadeza }
+            @case ('otoño') { Bronces, tierra y colores cálidos que complementen tu calidez }
+            @case ('invierno') { Rojos intensos, rosas fríos y colores dramáticos }
+          }
+        </p>
+      </div>
+      <div class="tip">
+        <div class="tip-icon">💎</div>
+        <h4>Accesorios</h4>
+        <p>
+          @switch (nombreEstacion.toLowerCase()) {
+            @case ('primavera') { Metales dorados y piedras en tonos cálidos }
+            @case ('verano') { Plata, perlas y gemas en tonos fríos y suaves }
+            @case ('otoño') { Cobre, bronce y materiales naturales }
+            @case ('invierno') { Platino, diamantes y metales en tonos fríos }
+          }
+        </p>
+      </div>
+    </div>
+  </section>
 </div>

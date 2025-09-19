@@ -1,11 +1,76 @@
-<div class="landing-background">
-  <div class="landing-box">
-    <div class="landing-content">
-      <h1 class="landing-title">Descubrí tu paleta<br>con <span>Colorimetría Viva</span></h1>
-      <div class="estaciones-cards">
-        @for (estacion of estaciones; track estacion.nombre) {
-          <app-cardbase [data]="estacion" (cardClick)="onCardClick(estacion)"></app-cardbase>
-        }
+<div class="hero-container">
+  <!-- Sección hero principal -->
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1 class="hero-title">
+        Descubrí tu
+        <span class="gradient-text">Paleta Personal</span>
+      </h1>
+      <p class="hero-subtitle">
+        Explorá las cuatro estaciones colorimétricas y encontrá los tonos que realzan tu belleza natural
+      </p>
+      <div class="hero-badge">
+        <span class="badge-icon">✨</span>
+        <span>Análisis personalizado de imagen</span>
+      </div>
+    </div>
+    
+    <!-- Cards de estaciones mejoradas -->
+    <div class="seasons-grid">
+      @for (estacion of estaciones; track estacion.nombre) {
+        <div class="season-card" 
+             [attr.data-season]="estacion.ruta"
+             (click)="onCardClick(estacion)">
+          <div class="card-gradient"></div>
+          <div class="card-content">
+            <div class="season-icon">
+              @switch (estacion.ruta) {
+                @case ('spring') { 🌸 }
+                @case ('summer') { ☀️ }
+                @case ('autumn') { 🍂 }
+                @case ('winter') { ❄️ }
+              }
+            </div>
+            <h3 class="season-name">{{ estacion.nombre }}</h3>
+            <p class="season-description">
+              @switch (estacion.ruta) {
+                @case ('spring') { Colores claros y delicados }
+                @case ('summer') { Tonos suaves y frescos }
+                @case ('autumn') { Matices cálidos y profundos }
+                @case ('winter') { Contrastes intensos y vibrantes }
+              }
+            </p>
+            <div class="card-arrow">→</div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+  
+  <!-- Sección informativa -->
+  <div class="info-section">
+    <div class="info-content">
+      <h2>¿Qué es la Colorimetría?</h2>
+      <p>
+        La colorimetría es el arte de determinar qué colores te favorecen según tu tono de piel, 
+        color de ojos y cabello. Cada persona pertenece a una "estación" que define su paleta ideal.
+      </p>
+      <div class="benefits-grid">
+        <div class="benefit">
+          <div class="benefit-icon">🎨</div>
+          <h4>Resalta tu belleza</h4>
+          <p>Descubre los colores que iluminan tu rostro</p>
+        </div>
+        <div class="benefit">
+          <div class="benefit-icon">👗</div>
+          <h4>Optimiza tu guardarropa</h4>
+          <p>Invierte en piezas que realmente te favorecen</p>
+        </div>
+        <div class="benefit">
+          <div class="benefit-icon">💫</div>
+          <h4>Aumenta tu confianza</h4>
+          <p>Siéntete radiante con tu paleta personal</p>
+        </div>
       </div>
     </div>
   </div>

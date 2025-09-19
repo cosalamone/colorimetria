@@ -1,10 +1,53 @@
-<div>
-  <h3>{{ title }}</h3>
-  <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
-    <div *ngFor="let color of colors" style="text-align: center;">
-      <div [style.background]="color.hex" style="width: 60px; height: 60px; border-radius: 8px; border: 1px solid #ccc;"></div>
-      <div style="font-size: 0.9em; margin-top: 0.3em;">{{ color.name }}</div>
-      <div style="font-size: 0.8em; color: #888;">{{ color.hex }}</div>
-    </div>
+<div class="color-palette-container">
+  <div class="palette-header">
+    <h3 class="palette-title">{{ title }}</h3>
+    <p class="palette-subtitle">{{ colors.length }} colores perfectos para ti</p>
+  </div>
+  
+  <div class="colors-grid">
+    @for (color of colors; track color.hex) {
+      <div class="color-item" 
+           [style.--color]="color.hex"
+           (click)="copyToClipboard(color.hex)"
+           [attr.aria-label]="'Color ' + color.name + ', código ' + color.hex + '. Hacer clic para copiar'">
+        
+        <div class="color-circle">
+          <div class="color-background" [style.backgroundColor]="color.hex"></div>
+          <div class="color-overlay">
+            <svg class="copy-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 1H4C2.9 1 2 1.9 2 3V17H4V3H16V1ZM19 5H8C6.9 5 6 5.9 6 7V21C6 22.1 6.9 23 8 23H19C20.1 23 21 22.1 21 21V7C21 5.9 20.1 5 19 5ZM19 21H8V7H19V21Z" fill="currentColor"/>
+            </svg>
+          </div>
+        </div>
+        
+        <div class="color-info">
+          <h4 class="color-name">{{ color.name }}</h4>
+          <p class="color-hex">{{ color.hex }}</p>
+          @if (isRgbVisible) {
+            <p class="color-rgb">{{ hexToRgb(color.hex) }}</p>
+          }
+        </div>
+        
+        <div class="copy-feedback" [class.visible]="copiedColor === color.hex">
+          ¡Copiado!
+        </div>
+      </div>
+    }
+  </div>
+  
+  <div class="palette-actions">
+    <button class="action-button secondary" (click)="toggleRgbDisplay()">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 4.5C7 4.5 2.73 7.61 1 12C2.73 16.39 7 19.5 12 19.5S21.27 16.39 23 12C21.27 7.61 17 4.5 12 4.5ZM12 17C9.24 17 7 14.76 7 12S9.24 7 12 7S17 9.24 17 12S14.76 17 12 17ZM12 9C10.34 9 9 10.34 9 12S10.34 15 12 15S15 13.66 15 12S13.66 9 12 9Z" fill="currentColor"/>
+      </svg>
+      {{ isRgbVisible ? 'Ocultar RGB' : 'Mostrar RGB' }}
+    </button>
+    
+    <button class="action-button primary" (click)="exportPalette()">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19 9H15L13 7H9C7.89 7 7.01 7.89 7.01 9L7 18C7 19.11 7.89 20 9 20H19C20.11 20 21 19.11 21 18V11C21 9.89 20.11 9 19 9ZM19 18H9V9H11.17L13.17 11H19V18ZM12 12C9.79 12 8 13.79 8 16S9.79 20 12 20S16 18.21 16 16S14.21 12 12 12ZM12 18C10.9 18 10 17.1 10 16S10.9 14 12 14S14 14.9 14 16S13.1 18 12 18Z" fill="currentColor"/>
+      </svg>
+      Exportar Paleta
+    </button>
   </div>
 </div>

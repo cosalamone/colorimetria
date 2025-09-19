@@ -1,3 +1,35 @@
-<div class="estacion-card" [ngStyle]="{'background': data.colorFondo || '#fff'}" (click)="cardClick.emit()">
-  <span>{{ data.nombre }}</span>
+<div class="card-container" 
+     [ngStyle]="{'--card-color': data.colorFondo}" 
+     (click)="cardClick.emit()">
+  <div class="card-background"></div>
+  <div class="card-content">
+    <div class="card-icon">
+      @switch (data.nombre.toLowerCase()) {
+        @case ('primavera') { 🌸 }
+        @case ('primavera clara') { 🌼 }
+        @case ('primavera cálida') { 🌻 }
+        @case ('primavera brillante') { 💐 }
+        @case ('verano') { ☀️ }
+        @case ('verano suave') { 🌊 }
+        @case ('verano verdadero') { 🌺 }
+        @case ('verano claro') { 🦋 }
+        @case ('otoño') { 🍂 }
+        @case ('otoño suave') { 🍁 }
+        @case ('otoño profundo') { 🌰 }
+        @case ('otoño cálido') { 🧡 }
+        @case ('invierno') { ❄️ }
+        @case ('invierno profundo') { 💎 }
+        @case ('invierno frío') { 🌟 }
+        @case ('invierno brillante') { ✨ }
+        @default { 🎨 }
+      }
+    </div>
+    <h3 class="card-title">{{ data.nombre }}</h3>
+    <div class="card-arrow">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </div>
+  <div class="card-shine"></div>
 </div>

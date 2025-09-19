@@ -1,46 +1,170 @@
 
+/* Reset y estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-	margin: 0;
-	min-height: 100vh;
-	background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
-	font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #FAFAFA 0%, #F0F4F8 50%, #E8F2FF 100%);
+  font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--neutral-800);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+/* Layout principal */
 .main-app-bg {
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: flex-start;
-	padding: 0;
-	background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0;
+  background: linear-gradient(135deg, #FAFAFA 0%, #F0F4F8 50%, #E8F2FF 100%);
+  background-attachment: fixed;
 }
 
-h1, h2, h3 {
-	font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
-	font-weight: 700;
-	letter-spacing: -1px;
+/* Tipografía mejorada */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: 0;
+  color: var(--neutral-800);
 }
 
-/* Botones de selección de colorimetría */
-app-colorimetry-selector a div {
-	box-shadow: 0 2px 12px #0001;
-	border-radius: 1.2rem;
-	transition: transform 0.18s, box-shadow 0.18s;
-	border: 1.5px solid #e0e7ff;
+h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  margin-bottom: 1.5rem;
 }
-app-colorimetry-selector a div:hover {
-	transform: scale(1.06) rotate(-2deg);
-	box-shadow: 0 6px 24px #b6b6e6cc;
-	border-color: #a5b4fc;
+
+h2 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+}
+
+h3 {
+  font-size: clamp(1.25rem, 3vw, 1.875rem);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--neutral-600);
+  margin-bottom: 1rem;
+}
+
+/* Utilidades globales */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.font-light { font-weight: 300; }
+.font-normal { font-weight: 400; }
+.font-medium { font-weight: 500; }
+.font-semibold { font-weight: 600; }
+.font-bold { font-weight: 700; }
+.font-extrabold { font-weight: 800; }
+.font-black { font-weight: 900; }
+
+/* Efectos de cristal y sombras */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.shadow-soft {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+.shadow-medium {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+.shadow-strong {
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.18);
+}
+
+/* Animaciones globales */
+.smooth-transition {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+}
+
+/* Estados de interacción */
+.interactive {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.interactive:hover {
+  transform: scale(1.02);
+}
+
+.interactive:active {
+  transform: scale(0.98);
 }
 
 /* Responsive */
-@media (max-width: 700px) {
-	.main-app-bg {
-		padding: 0.5rem;
-	}
-	app-colorimetry-selector div[style*="flex-direction: column"] {
-		gap: 1.2rem !important;
-	}
+@media (max-width: 768px) {
+  .main-app-bg {
+    padding: 1rem;
+  }
+  
+  body {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-app-bg {
+    padding: 0.75rem;
+  }
+}
+
+/* Accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Focus states mejorados */
+*:focus {
+  outline: 2px solid var(--neutral-500);
+  outline-offset: 2px;
+}
+
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--neutral-500);
+  outline-offset: 2px;
 }
