@@ -2,7 +2,7 @@
   position: relative;
   width: 100%;
   min-width: 240px;
-  height: 160px;
+  height: 180px;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   border-radius: 16px;
@@ -11,6 +11,18 @@
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+@media (min-width: 1024px) {
+  .card-container {
+    height: 200px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .card-container {
+    height: 220px;
+  }
 }
 
 .card-container:hover {

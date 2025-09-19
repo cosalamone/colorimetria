@@ -1,10 +1,31 @@
 
-/* Hero Container */
+/* Hero Container - Desktop Full Width */
 .hero-container {
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
+  max-width: none;
+  margin: 0;
+  padding: 3rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+}
+
+@media (min-width: 1024px) {
+  .hero-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 4rem 3rem;
+    grid-template-columns: 1fr;
+    gap: 5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero-container {
+    max-width: 1600px;
+    padding: 5rem 4rem;
+    gap: 6rem;
+  }
 }
 
 /* Hero Content */
@@ -69,13 +90,26 @@
   font-size: 1.2rem;
 }
 
-/* Seasons Grid */
+/* Seasons Grid - Desktop Layout */
 .seasons-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   width: 100%;
-  max-width: 900px;
+  max-width: none;
+}
+
+@media (min-width: 1024px) {
+  .seasons-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .seasons-grid {
+    gap: 3rem;
+  }
 }
 
 .season-card {
