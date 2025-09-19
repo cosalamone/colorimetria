@@ -1,0 +1,9 @@
+<div class="station-page">
+  <button class="volver-btn" (click)="volver()">← Volver</button>
+  <h2 class="station-title">{{ nombreEstacion }}</h2>
+  <div class="subestaciones-cards">
+    @for (sub of subestaciones; track sub.nombre) {
+      <app-cardbase [data]="sub"></app-cardbase>
+    }
+  </div>
+</div>

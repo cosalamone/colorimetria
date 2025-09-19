@@ -1,0 +1,40 @@
+.station-page {
+  max-width: 700px;
+  margin: 3rem auto 0 auto;
+  background: #fff;
+  border-radius: 2rem;
+  box-shadow: 0 4px 32px 0 rgba(0,0,0,0.08);
+  padding: 2.5rem 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.volver-btn {
+  align-self: flex-start;
+  background: none;
+  border: none;
+  color: #555;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  transition: color 0.15s;
+}
+.volver-btn:hover {
+  color: #222;
+}
+
+.station-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #444;
+  text-align: center;
+}
+
+.subestaciones-cards {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}

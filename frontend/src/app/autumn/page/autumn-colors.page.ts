@@ -3,15 +3,15 @@ import { StationPageComponent } from '../../core/components/station-page.compone
 import { SubStationModel } from '../../core/models/sub-station.model';
 
 @Component({
-  selector: 'app-summer-colors-page',
+  selector: 'app-autumn-colors-page',
   standalone: true,
   imports: [StationPageComponent],
-  templateUrl: './summer-colors.page.html',
+  templateUrl: './autumn-colors.page.html',
 })
-export class SummerColorsPageComponent {
+export class AutumnColorsPageComponent {
   subestaciones: SubStationModel[] = [
-    { nombre: 'Verano Suave', colorFondo: '#B5D8EB' },
-    { nombre: 'Verano Verdadero', colorFondo: '#A3C7E0' },
-    { nombre: 'Verano Claro', colorFondo: '#D6EAF8' },
+    { nombre: 'Otoño Suave', colorFondo: '#ffe7c7' },
+    { nombre: 'Otoño Profundo', colorFondo: '#e0b084' },
+    { nombre: 'Otoño Cálido', colorFondo: '#ffd6a0' },
   ];
 }
