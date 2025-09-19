@@ -1,3 +1,3 @@
-<div class="estacion-card" [ngStyle]="{'background': data.colorFondo || '#fff'}">
+<div class="estacion-card" [ngStyle]="{'background': data.colorFondo || '#fff'}" (click)="cardClick.emit()">
   <span>{{ data.nombre }}</span>
 </div>

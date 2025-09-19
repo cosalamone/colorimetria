@@ -4,7 +4,7 @@
       <h1 class="landing-title">Descubrí tu paleta<br>con <span>Colorimetría Viva</span></h1>
       <div class="estaciones-cards">
         @for (estacion of estaciones; track estacion.nombre) {
-          <app-cardbase [data]="estacion"></app-cardbase>
+          <app-cardbase [data]="estacion" (cardClick)="onCardClick(estacion)"></app-cardbase>
         }
       </div>
     </div>

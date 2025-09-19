@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { CardBaseModel } from '../models/card-base.model';
 import { CardBaseComponent } from './cards/cardbase.component';
 
@@ -11,13 +12,17 @@ import { CardBaseComponent } from './cards/cardbase.component';
 })
 export class ColorimetrySelectorComponent {
   estaciones: CardBaseModel[] = [
-    { nombre: 'Verano', colorFondo: '#d6f7ff' },
-    { nombre: 'Otoño', colorFondo: '#ffe7c7' },
-    { nombre: 'Invierno', colorFondo: '#e0d6ff' },
-    { nombre: 'Primavera', colorFondo: '#ffd6e0' },
+    { nombre: 'Verano', colorFondo: '#d6f7ff', ruta: 'summer' },
+    { nombre: 'Otoño', colorFondo: '#ffe7c7', ruta: 'autumn' },
+    { nombre: 'Invierno', colorFondo: '#e0d6ff', ruta: 'winter' },
+    { nombre: 'Primavera', colorFondo: '#ffd6e0', ruta: 'spring' },
   ];
 
-  onSelect(estacion: string) {
-    console.log('Seleccionaste:', estacion);
+  constructor(private router: Router) {}
+
+  onCardClick(estacion: CardBaseModel) {
+    if (estacion.ruta) {
+      this.router.navigate(['/' + estacion.ruta]);
+    }
   }
 }
