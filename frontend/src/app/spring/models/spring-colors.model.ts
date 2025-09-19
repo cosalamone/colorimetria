@@ -5,33 +5,33 @@ export interface SpringColor {
 }
 
 export const SPRING_COLORS: SpringColor[] = [
-  // Clara
-  { name: 'Rosa suave', hex: '#FFD6E0', subtype: 'Clara' },
-  { name: 'Coral claro', hex: '#FFB6C1', subtype: 'Clara' },
-  { name: 'Melocotón', hex: '#FFCCCB', subtype: 'Clara' },
-  { name: 'Amarillo claro', hex: '#FFF9C7', subtype: 'Clara' },
-  { name: 'Verde menta', hex: '#D6FFF0', subtype: 'Clara' },
-  { name: 'Azul cielo', hex: '#E0F6FF', subtype: 'Clara' },
-  { name: 'Lavanda suave', hex: '#E6E0FF', subtype: 'Clara' },
-  { name: 'Beige rosado', hex: '#F5F0E8', subtype: 'Clara' },
+  // Clara (Light Spring) - Colores suaves, claros y cálidos
+  { name: 'Rosa claro', hex: '#FFE4E1', subtype: 'Clara' },
+  { name: 'Coral claro', hex: '#FFF0F5', subtype: 'Clara' },
+  { name: 'Melocotón', hex: '#FFDAB9', subtype: 'Clara' },
+  { name: 'Amarillo claro', hex: '#FFFACD', subtype: 'Clara' },
+  { name: 'Verde claro', hex: '#F0FFF0', subtype: 'Clara' },
+  { name: 'Azul claro', hex: '#F0F8FF', subtype: 'Clara' },
+  { name: 'Lavanda claro', hex: '#FFF8DC', subtype: 'Clara' },
+  { name: 'Beige rosado', hex: '#FAF0E6', subtype: 'Clara' },
   
-  // Cálida
-  { name: 'Coral intenso', hex: '#FF7F7F', subtype: 'Cálida' },
-  { name: 'Naranja suave', hex: '#FFB07F', subtype: 'Cálida' },
+  // Cálida (Warm Spring) - Colores cálidos con base dorada
+  { name: 'Coral cálido', hex: '#FF7F50', subtype: 'Cálida' },
+  { name: 'Naranja cálido', hex: '#FFA500', subtype: 'Cálida' },
   { name: 'Amarillo dorado', hex: '#FFD700', subtype: 'Cálida' },
-  { name: 'Verde lima', hex: '#CCFF99', subtype: 'Cálida' },
-  { name: 'Turquesa cálido', hex: '#7FDDDD', subtype: 'Cálida' },
-  { name: 'Rosa cálido', hex: '#FF99CC', subtype: 'Cálida' },
+  { name: 'Verde cálido', hex: '#9ACD32', subtype: 'Cálida' },
+  { name: 'Turquesa cálido', hex: '#40E0D0', subtype: 'Cálida' },
+  { name: 'Rosa cálido', hex: '#FF69B4', subtype: 'Cálida' },
   { name: 'Marfil', hex: '#FFFFF0', subtype: 'Cálida' },
-  { name: 'Camel claro', hex: '#E6D2B3', subtype: 'Cálida' },
+  { name: 'Camel claro', hex: '#F5DEB3', subtype: 'Cálida' },
   
-  // Brillante
-  { name: 'Fucsia brillante', hex: '#FF1493', subtype: 'Brillante' },
-  { name: 'Naranja brillante', hex: '#FF8C00', subtype: 'Brillante' },
+  // Brillante (Clear Spring) - Colores vibrantes y claros
+  { name: 'Rosa brillante', hex: '#FF1493', subtype: 'Brillante' },
+  { name: 'Naranja brillante', hex: '#FF4500', subtype: 'Brillante' },
   { name: 'Amarillo brillante', hex: '#FFFF00', subtype: 'Brillante' },
   { name: 'Verde brillante', hex: '#00FF7F', subtype: 'Brillante' },
   { name: 'Turquesa vibrante', hex: '#00CED1', subtype: 'Brillante' },
-  { name: 'Azul eléctrico', hex: '#0080FF', subtype: 'Brillante' },
-  { name: 'Violeta brillante', hex: '#8A2BE2', subtype: 'Brillante' },
+  { name: 'Azul brillante', hex: '#1E90FF', subtype: 'Brillante' },
+  { name: 'Violeta brillante', hex: '#9370DB', subtype: 'Brillante' },
   { name: 'Blanco puro', hex: '#FFFFFF', subtype: 'Brillante' },
 ];

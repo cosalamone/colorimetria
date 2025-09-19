@@ -38,7 +38,6 @@
 
 /* Header de la estación */
 .station-header {
-  text-align: center;
   margin-bottom: 4rem;
 }
 
@@ -60,6 +59,13 @@
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
 
+@media (min-width: 1024px) {
+  .back-button {
+    margin-left: 0;
+    align-self: flex-start;
+  }
+}
+
 .back-button:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
@@ -78,6 +84,7 @@
   padding: 3rem 2rem;
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  text-align: center;
 }
 
 .station-icon {
@@ -127,28 +134,43 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
+  justify-items: center;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .characteristics-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 2.5rem;
   }
 }
 
+@media (min-width: 1024px) {
+  .characteristics-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+}
+
 @media (min-width: 1400px) {
   .characteristics-grid {
-    grid-template-columns: repeat(4, 1fr);
     gap: 3rem;
+    max-width: 1000px;
   }
 }
 
 .characteristic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   padding: 1.5rem;
   background: rgba(255, 255, 255, 0.6);
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.4);
+  min-height: 180px;
 }
 
 .characteristic-icon {
@@ -197,25 +219,30 @@
 
 .subtypes-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 2rem;
+  justify-items: center;
+}
+
+@media (min-width: 768px) {
+  .subtypes-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
 }
 
 @media (min-width: 1024px) {
   .subtypes-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
-  }
-}
-
-@media (min-width: 1400px) {
-  .subtypes-grid {
-    grid-template-columns: repeat(4, 1fr);
     gap: 3rem;
+    max-width: 1000px;
   }
 }
 
 .subtype-card {
+  display: flex;
+  flex-direction: column;
   background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(10px);
   border-radius: 20px;
@@ -223,6 +250,7 @@
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease;
+  min-height: 220px;
 }
 
 .subtype-card:hover {
@@ -230,8 +258,12 @@
 }
 
 .subtype-info {
-  margin-top: 1rem;
+  margin-top: auto;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .subtype-info h4 {
@@ -272,29 +304,37 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
+  justify-items: center;
+}
+
+@media (min-width: 768px) {
+  .tips-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
 }
 
 @media (min-width: 1024px) {
   .tips-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
-  }
-}
-
-@media (min-width: 1400px) {
-  .tips-grid {
-    grid-template-columns: repeat(4, 1fr);
     gap: 3rem;
+    max-width: 1000px;
   }
 }
 
 .tip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   padding: 2rem;
   background: rgba(255, 255, 255, 0.6);
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.4);
   transition: transform 0.3s ease;
+  min-height: 200px;
 }
 
 .tip:hover {

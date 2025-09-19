@@ -5,7 +5,7 @@ export interface SummerColor {
 }
 
 export const SUMMER_COLORS: SummerColor[] = [
-  // Suave
+  // Suave (Soft Summer) - Colores con gris añadido, tonos polvorosos
   { name: 'Celeste', hex: '#B5D8EB', subtype: 'Suave' },
   { name: 'Azul', hex: '#7BAFD4', subtype: 'Suave' },
   { name: 'Verde claro', hex: '#B7D6C2', subtype: 'Suave' },
@@ -14,31 +14,33 @@ export const SUMMER_COLORS: SummerColor[] = [
   { name: 'Mostaza', hex: '#E2C275', subtype: 'Suave' },
   { name: 'Rojo', hex: '#E6A6A1', subtype: 'Suave' },
   { name: 'Naranja', hex: '#F7C59F', subtype: 'Suave' },
-  { name: 'Marrón', hex: '#BFA6A0', subtype: 'Suave' },
+  { name: 'Marrón', hex: '#A0958B', subtype: 'Suave' },
   { name: 'Violeta', hex: '#B6A6D6', subtype: 'Suave' },
   { name: 'Rosa', hex: '#E6B6C2', subtype: 'Suave' },
-  // Verdadero
-  { name: 'Celeste', hex: '#A3C7E0', subtype: 'Verdadero' },
-  { name: 'Azul', hex: '#5B8DB8', subtype: 'Verdadero' },
-  { name: 'Verde claro', hex: '#A3D6B2', subtype: 'Verdadero' },
-  { name: 'Verde oscuro', hex: '#4B7C6B', subtype: 'Verdadero' },
-  { name: 'Amarillo', hex: '#F6E6A6', subtype: 'Verdadero' },
-  { name: 'Mostaza', hex: '#D2B265', subtype: 'Verdadero' },
-  { name: 'Rojo', hex: '#D68A8A', subtype: 'Verdadero' },
-  { name: 'Naranja', hex: '#F7B59F', subtype: 'Verdadero' },
-  { name: 'Marrón', hex: '#A68A80', subtype: 'Verdadero' },
-  { name: 'Violeta', hex: '#A68AD6', subtype: 'Verdadero' },
-  { name: 'Rosa', hex: '#E6A6B2', subtype: 'Verdadero' },
-  // Claro
-  { name: 'Celeste', hex: '#D6EAF8', subtype: 'Claro' },
-  { name: 'Azul', hex: '#AED6F1', subtype: 'Claro' },
-  { name: 'Verde claro', hex: '#D4EFDF', subtype: 'Claro' },
-  { name: 'Verde oscuro', hex: '#A9DFBF', subtype: 'Claro' },
-  { name: 'Amarillo', hex: '#FCF3CF', subtype: 'Claro' },
-  { name: 'Mostaza', hex: '#F9E79F', subtype: 'Claro' },
-  { name: 'Rojo', hex: '#F5B7B1', subtype: 'Claro' },
-  { name: 'Naranja', hex: '#FAD7A0', subtype: 'Claro' },
-  { name: 'Marrón', hex: '#D7BDE2', subtype: 'Claro' },
-  { name: 'Violeta', hex: '#D2B4DE', subtype: 'Claro' },
-  { name: 'Rosa', hex: '#F9C9D5', subtype: 'Claro' },
+  
+  // Verdadero (True Summer) - Colores puros pero fríos, con base azul
+  { name: 'Celeste', hex: '#87CEEB', subtype: 'Verdadero' },
+  { name: 'Azul', hex: '#4682B4', subtype: 'Verdadero' },
+  { name: 'Verde claro', hex: '#90EE90', subtype: 'Verdadero' },
+  { name: 'Verde oscuro', hex: '#2E8B57', subtype: 'Verdadero' },
+  { name: 'Amarillo', hex: '#F0E68C', subtype: 'Verdadero' },
+  { name: 'Mostaza', hex: '#DAA520', subtype: 'Verdadero' },
+  { name: 'Rojo', hex: '#DC143C', subtype: 'Verdadero' },
+  { name: 'Naranja', hex: '#FF6347', subtype: 'Verdadero' },
+  { name: 'Marrón', hex: '#8B7355', subtype: 'Verdadero' },
+  { name: 'Violeta', hex: '#9370DB', subtype: 'Verdadero' },
+  { name: 'Rosa', hex: '#FF69B4', subtype: 'Verdadero' },
+  
+  // Claro (Light Summer) - Colores pasteles, muy claros y delicados
+  { name: 'Celeste', hex: '#E0F6FF', subtype: 'Claro' },
+  { name: 'Azul', hex: '#ADD8E6', subtype: 'Claro' },
+  { name: 'Verde claro', hex: '#F0FFF0', subtype: 'Claro' },
+  { name: 'Verde oscuro', hex: '#E6F3E6', subtype: 'Claro' },
+  { name: 'Amarillo', hex: '#FFFACD', subtype: 'Claro' },
+  { name: 'Mostaza', hex: '#F5DEB3', subtype: 'Claro' },
+  { name: 'Rojo', hex: '#FFE4E1', subtype: 'Claro' },
+  { name: 'Naranja', hex: '#FFEFD5', subtype: 'Claro' },
+  { name: 'Marrón', hex: '#F5F5DC', subtype: 'Claro' },
+  { name: 'Violeta', hex: '#E6E6FA', subtype: 'Claro' },
+  { name: 'Rosa', hex: '#FFF0F5', subtype: 'Claro' },
 ];
